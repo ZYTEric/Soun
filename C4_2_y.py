@@ -1,5 +1,4 @@
-from chapter2_基础.soundBase import *
-from chapter4_特征提取.pitch_detection import *
+
 
 data, fs = soundBase('C4_2_y.wav').audioread()
 data -= np.mean(data)
@@ -78,9 +77,4 @@ print(a)
 w, H = freqz(b, a, 1000)
 H, w = H[:500], w[:500]
 mag = np.abs(H)
-db = 20 * np.log10((mag + 1e-20) / np.max(mag))
-
-plt.plot(w / np.pi * fs2, db)
-plt.ylim([-90, 10])
-plt.title('椭圆滤波器频率响应')
-plt.savefig('images/ellip.png')
+db = 20 * np.log10((mag + 1e-20) / np.m
